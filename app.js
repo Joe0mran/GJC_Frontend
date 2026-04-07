@@ -3,7 +3,7 @@
 // ==========================
 // CONFIG
 // ==========================
-const API_BASE_URL = "http://gjc.somee.com";
+const API_BASE_URL = "https://gjc.somee.com";
 const API_CUSTOMERS = `${API_BASE_URL}/api/customer`;
 
 // ==========================
