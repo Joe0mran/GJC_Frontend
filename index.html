@@ -1,0 +1,171 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GemJam — Admin Dashboard</title>
+
+  <!-- Inter font (optional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- Top bar -->
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo">GJ</div>
+        <div>
+          <h1>GemJam <span class="subtitle">— Admin Dashboard</span></h1>
+          <p>Customer registry & shipping-ready profiles</p>
+        </div>
+      </div>
+
+      <div class="actions">
+        <span class="badge"><b id="countBadge">0</b> customers</span>
+        <button class="btn primary" id="btnAdd" type="button">Customer Form</button>
+      </div>
+    </div>
+
+    <div class="grid">
+      <!-- Left: table -->
+      <div class="card">
+        <div class="card-head">
+          <div class="title">
+            <h2>Customers</h2>
+            <span>Search, select, print, view details</span>
+          </div>
+          <div class="chip"><span class="dot"></span> Live</div>
+        </div>
+
+        <div class="search">
+          <input id="searchInput" type="text" placeholder="Search by name, phone, city..." />
+          <button class="btn" id="btnClear" type="button">Clear</button>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th class="col-name">Customer name</th>
+                <th class="col-phone">Phone</th>
+                <th class="col-city">City</th>
+                <th class="col-actions">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="tbody">
+              <!-- injected by JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="empty" id="emptyState" style="display:none;">
+          No customers match your search.
+        </div>
+
+        <div class="error" id="errorState" style="display:none;"></div>
+      </div>
+
+      <!-- Right: details -->
+      <div class="card">
+        <div class="card-head">
+          <div class="title">
+            <h2>Customer Details</h2>
+            <span>Read-only profile preview</span>
+          </div>
+          <span class="badge">Selected: <b id="selectedBadge">None</b></span>
+        </div>
+
+        <div class="details-body" id="detailsBody">
+          <div class="empty">Select a customer from the list to view details here.</div>
+        </div>
+
+        <div class="details-footer">
+          <button class="btn" id="btnPrint" type="button">Print</button>
+          <button class="btn primary" id="btnEdit" type="button">Edit Customer</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Edit Modal -->
+  <div class="modal" id="editModal" style="display:none;">
+    <div class="modal-backdrop" data-close="true"></div>
+
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <h3>Edit Customer</h3>
+          <p id="editSubTitle" class="muted">Updating selected customer</p>
+        </div>
+        <button class="icon-btn" id="btnCloseEdit" type="button" title="Close">✕</button>
+      </div>
+
+      <form id="editForm" class="modal-body">
+        <div class="form-grid">
+          <div class="field">
+            <label>First Name</label>
+            <input id="editFirstName" type="text" />
+          </div>
+          <div class="field">
+            <label>Last Name</label>
+            <input id="editLastName" type="text" />
+          </div>
+
+          <div class="field">
+            <label>Email</label>
+            <input id="editEmail" type="email" />
+          </div>
+          <div class="field">
+            <label>Phone</label>
+            <input id="editPhoneNumber" type="text" />
+          </div>
+          <div class="field">
+            <label>Instagram</label>
+            <input id="editIgAccount" type="text" />
+          </div>
+
+          <div class="field">
+            <label>Country</label>
+            <input id="editCountry" type="text" />
+          </div>
+          <div class="field">
+            <label>City</label>
+            <input id="editCity" type="text" />
+          </div>
+
+          <div class="field field-full">
+            <label>Address</label>
+            <input id="editAddressLine" type="text" />
+          </div>
+
+          <div class="field field-full">
+            <label>Address Notes</label>
+            <input id="editAddressNotes" type="text" />
+          </div>
+
+          <div class="field field-full">
+            <label>Notes</label>
+            <textarea id="editNotes" rows="3"></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn" type="button" id="btnCancelEdit">Cancel</button>
+          <button class="btn primary" type="button" id="btnDelete">Delete Customer</button>
+          <button class="btn primary" type="submit" id="btnSaveEdit">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
