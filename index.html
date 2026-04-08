@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GemJam Customer Form</title>
+  <link rel="stylesheet" href="customer-form.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+
+    <main class="customer-page">
+      <section class="form-card">
+        <div class="form-top">
+          <div class="brand-block">
+            <div class="brand-logo">GJ</div>
+            <div>
+              <h1>GemJam — Customer Form</h1>
+              <p>Fill in your information for customer registration</p>
+            </div>
+          </div>
+
+          <div class="status-pill">Secure Form</div>
+        </div>
+
+        <form id="customerForm" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="firstName">First Name <span>*</span></label>
+              <input type="text" id="firstName" name="firstName" required />
+              <small class="error" id="firstNameError"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="lastName">Last Name <span>*</span></label>
+              <input type="text" id="lastName" name="lastName" required />
+              <small class="error" id="lastNameError"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="phoneNumber">Phone Number <span>*</span></label>
+              <input type="text" id="phoneNumber" name="phoneNumber" required />
+              <small class="error" id="phoneNumberError"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" />
+              <small class="error" id="emailError"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="igAccount">Instagram Account</label>
+              <input type="text" id="igAccount" name="igAccount" placeholder="@username" />
+              <small class="error" id="igAccountError"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="country">Country <span>*</span></label>
+              <input type="text" id="country" name="country" required />
+              <small class="error" id="countryError"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="city">City <span>*</span></label>
+              <input type="text" id="city" name="city" required />
+              <small class="error" id="cityError"></small>
+            </div>
+
+            <div class="form-group form-group-full">
+              <label for="addressLine">Address <span>*</span></label>
+              <input type="text" id="addressLine" name="addressLine" required />
+              <small class="error" id="addressLineError"></small>
+            </div>
+
+            <div class="form-group form-group-full">
+              <label for="addressNotes">Address Notes</label>
+              <textarea id="addressNotes" name="addressNotes" rows="3"></textarea>
+              <small class="error" id="addressNotesError"></small>
+            </div>
+
+            <div class="form-group form-group-full">
+              <label for="notes">Notes</label>
+              <textarea id="notes" name="notes" rows="4"></textarea>
+              <small class="error" id="notesError"></small>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" id="submitBtn" class="primary-btn">Submit</button>
+            <button type="button" id="resetBtn" class="ghost-btn">Reset</button>
+          </div>
+
+          <div id="formMessage" class="form-message"></div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="customer-form.js"></script>
+</body>
+</html>
