@@ -265,13 +265,13 @@ function printSelectedCustomer() {
   }).join("");
 
   const html =
-    '<html><head><title>Print Customer</title>' +
-    '<style>' +
-    'body{font-family:Inter,Arial,sans-serif;padding:22px;}' +
-    'h1{margin:0 0 14px;}' +
-    '.row{margin:8px 0;font-size:14px;}' +
-    '.k{color:#555;font-weight:800;display:inline-block;width:140px;}' +
-    '</style></head><body>' +
+  '<html><head><title>Print Customer</title>' +
+  '<style>' +
+  'body{font-family:Inter,Arial,sans-serif;padding:28px;font-size:16px;}' +
+  'h1{margin:0 0 18px;font-size:26px;}' +
+  '.row{margin:10px 0;font-size:18px;}' +
+  '.k{color:#555;font-weight:800;display:inline-block;width:160px;font-size:18px;}' +
+  '</style></head><body>' +
     '<h1>Customer Details</h1>' +
     rowsHtml +
     '<script>window.print();<\/script>' +
