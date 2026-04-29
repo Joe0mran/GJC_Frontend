@@ -308,19 +308,34 @@ function closeEditModal() {
 }
 
 function buildEditPayload() {
-  return {
+  const payload = {
     firstName: editFirstName.value.trim(),
     lastName: editLastName.value.trim(),
     email: editEmail.value.trim(),
     phoneNumber: editPhoneNumber.value.trim(),
     igAccount: editIgAccount.value.trim(),
     notes: editNotes.value.trim(),
-
     country: editCountry.value.trim(),
     city: editCity.value.trim(),
     addressLine: editAddressLine.value.trim(),
     addressNotes: editAddressNotes.value.trim(),
   };
+
+  if (!payload.firstName) {
+    throw new Error("First name is required.");
+  }
+
+  if (!payload.lastName) {
+    throw new Error("Last name is required.");
+  }
+
+  if (!payload.phoneNumber) {
+    throw new Error("Phone number is required.");
+  }
+
+  console.log("PUT payload:", payload);
+
+  return payload;
 }
 
 // ==========================
