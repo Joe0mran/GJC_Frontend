@@ -1,4 +1,5 @@
 const API_BASE_URL = "https://gjc.somee.com";
+const API_CUSTOMERS = `${API_BASE_URL}/api/customer`;
 // replace with your actual backend URL
 
 const customerForm = document.getElementById("customerForm");
@@ -118,7 +119,7 @@ function buildPayload() {
 }
 
 async function submitCustomer(payload) {
-  const response = await fetch(API_BASE_URL, {
+  const response = await fetch(API_CUSTOMERS, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
